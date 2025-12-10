@@ -1,0 +1,6 @@
+{%- set crio = salt['grains.filter_by']({
+  'Debian': {
+  },
+  'Ubuntu': {
+  },
+}, grain='os', merge=salt['pillar.get']('crio:lookup')) -%}

@@ -1,0 +1,10 @@
+{%- set tplroot = tpldir.split('/')[0] -%}
+{%- from tplroot ~ "/map.jinja" import crio with context -%}
+{%- from "kubernetes/vars.jinja" import
+    kubernetes_version
+-%}
+
+{%- set crio_version = crio.source_version -%}
+{%- set crio_pkg_version = kubernetes_version|replace('v', '') + '-1.1' -%}
+
+{%- set crio_aptrepo_url = crio.source_url + crio_version + '/deb/' -%}
